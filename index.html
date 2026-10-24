@@ -37,36 +37,36 @@
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 flex flex-col justify-between">
 
     <!-- SYNC STATUS INDICATOR BANNER -->
-    <div id="syncBanner" class="bg-emerald-600 text-white text-xs font-semibold px-4 py-1.5 text-center hidden flex items-center justify-center gap-2">
+    <div id="syncBanner" class="bg-emerald-600 text-white text-sm font-semibold px-4 py-1.5 text-center hidden flex items-center justify-center gap-2">
         <i class="fa-solid fa-arrows-rotate animate-spin" id="syncIcon"></i>
         <span id="syncStatusText">Menghubungkan ke Google Sheets...</span>
     </div>
 
     <!-- HEADER / NAVIGATION BAR -->
     <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 shadow-sm transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
                 <!-- Brand / Village Identity -->
                 <div class="flex items-center gap-3">
-                    <div id="villageLogoContainer" class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-xl shadow-md overflow-hidden shrink-0">
+                    <div id="villageLogoContainer" class="w-16 h-16 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-2xl shadow-md overflow-hidden shrink-0">
                         <i class="fa-solid fa-landmark" id="villageLogoIcon"></i>
                         <img id="villageLogoImg" src="" class="w-full h-full object-cover hidden" alt="Logo Desa">
                     </div>
                     <div>
-                        <span id="displayHeaderSub" class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Pilkades Serentak</span>
-                        <h1 id="displayHeaderTitle" class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none">Desa Sukamaju</h1>
-                        <p id="displayHeaderRegion" class="text-xs text-slate-500 dark:text-slate-400 font-medium">Kec. Mandiri, Kab. Sejahtera</p>
+                        <span id="displayHeaderSub" class="text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Pilkades Serentak</span>
+                        <h1 id="displayHeaderTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none">Desa Sukamaju</h1>
+                        <p id="displayHeaderRegion" class="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium">Kec. Mandiri, Kab. Sejahtera</p>
                     </div>
                 </div>
 
                 <!-- Action Controls -->
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <button onclick="openVillageModal()" class="px-3 py-2 text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-xl transition flex items-center gap-2 border border-slate-200 dark:border-slate-600">
+                    <button onclick="openVillageModal()" class="px-3 py-2 text-sm sm:text-base font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-xl transition flex items-center gap-2 border border-slate-200 dark:border-slate-600">
                         <i class="fa-solid fa-pen-to-square text-emerald-500"></i>
                         <span class="hidden md:inline">Identitas Desa</span>
                     </button>
 
-                    <button onclick="openEditModal()" class="px-3 py-2 text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/50 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 rounded-xl transition flex items-center gap-2 border border-emerald-200 dark:border-emerald-800">
+                    <button onclick="openEditModal()" class="px-3 py-2 text-sm sm:text-base font-semibold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/50 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 rounded-xl transition flex items-center gap-2 border border-emerald-200 dark:border-emerald-800">
                         <i class="fa-solid fa-user-pen text-emerald-600"></i>
                         <span class="hidden md:inline">Kelola Calon</span>
                     </button>
@@ -81,30 +81,30 @@
     </header>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+    <main class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
         <!-- HERO & PRESENTATION TIMER BANNER -->
         <div class="text-center mb-8">
-            <span id="displayBadge" class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 mb-3 border border-emerald-200 dark:border-emerald-800">
+            <span id="displayBadge" class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-base sm:text-lg font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 mb-3 border border-emerald-200 dark:border-emerald-800">
                 <i class="fa-solid fa-circle-dot text-[10px] animate-pulse"></i> Sesi Pemaparan Visi & Misi Resmi
             </span>
-            <h2 id="displayHeroTitle" class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
+            <h2 id="displayHeroTitle" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
                 Penyampaian Visi, Misi & Program Kerja
             </h2>
-            <p id="displayHeroSub" class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+            <p id="displayHeroSub" class="text-slate-600 dark:text-slate-400 max-w-5xl mx-auto text-lg sm:text-2xl">
                 Pilih dan kenali calon pemimpin Desa Sukamaju untuk masa jabatan periode selanjutnya.
             </p>
         </div>
 
         <!-- MAIN PRESENTATION TIMER WIDGET -->
-        <div class="max-w-xl mx-auto mb-8 p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="max-w-3xl mx-auto mb-8 p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
                 <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-stopwatch text-xl"></i>
+                    <i class="fa-solid fa-stopwatch text-3xl"></i>
                 </div>
                 <div class="text-left">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Timer Pemaparan</span>
-                    <div id="timerDisplay" class="text-3xl font-extrabold font-mono text-slate-900 dark:text-white leading-none">
+                    <span class="text-sm sm:text-base font-bold text-slate-400 uppercase tracking-wider block">Timer Pemaparan</span>
+                    <div id="timerDisplay" class="text-5xl font-extrabold font-mono text-slate-900 dark:text-white leading-none">
                         10:00
                     </div>
                 </div>
@@ -112,24 +112,24 @@
 
             <div class="flex items-center gap-2 w-full sm:w-auto justify-center">
                 <div class="flex items-center bg-slate-100 dark:bg-slate-700/60 rounded-xl px-2 py-1 border border-slate-200 dark:border-slate-600">
-                    <input id="timerInput" type="number" min="1" max="60" value="10" onchange="resetTimer()" class="w-12 bg-transparent text-center font-bold text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
-                    <span class="text-xs text-slate-500 dark:text-slate-400 font-medium pr-1">menit</span>
+                    <input id="timerInput" type="number" min="1" max="60" value="10" onchange="resetTimer()" class="w-16 bg-transparent text-center font-bold text-slate-800 dark:text-slate-100 text-xl focus:outline-none">
+                    <span class="text-base text-slate-500 dark:text-slate-400 font-medium pr-1">menit</span>
                 </div>
 
-                <button id="timerToggleBtn" onclick="toggleTimer()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow transition flex items-center gap-1.5">
-                    <i id="timerIcon" class="fa-solid fa-play text-xs"></i>
+                <button id="timerToggleBtn" onclick="toggleTimer()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5">
+                    <i id="timerIcon" class="fa-solid fa-play text-base"></i>
                     <span id="timerText">Mulai</span>
                 </button>
 
                 <button onclick="resetTimer()" class="p-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 rounded-xl transition" title="Reset Timer">
-                    <i class="fa-solid fa-rotate-left text-sm"></i>
+                    <i class="fa-solid fa-rotate-left text-lg"></i>
                 </button>
             </div>
         </div>
 
         <!-- TIMER ALERT BANNER -->
-        <div id="timerAlertBanner" class="hidden max-w-xl mx-auto mb-6 p-3 bg-red-500 text-white font-bold rounded-xl shadow-lg animate-bounce flex items-center justify-center gap-2 text-center text-sm">
-            <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+        <div id="timerAlertBanner" class="hidden max-w-3xl mx-auto mb-6 p-3 bg-red-500 text-white font-bold rounded-xl shadow-lg animate-bounce flex items-center justify-center gap-2 text-center text-xl">
+            <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
             <span>Waktu sudah habis!</span>
         </div>
 
@@ -139,7 +139,7 @@
                 <!-- Dynamically generated filter buttons -->
             </div>
 
-            <button onclick="openCompareModal()" class="w-full sm:w-auto px-4 py-2 text-xs font-semibold bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 rounded-xl transition shadow flex items-center justify-center gap-2">
+            <button onclick="openCompareModal()" class="w-full sm:w-auto px-5 py-3 text-base sm:text-lg font-semibold bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 rounded-xl transition shadow flex items-center justify-center gap-2">
                 <i class="fa-solid fa-code-compare"></i>
                 <span>Matriks Pembanding Visi Misi</span>
             </button>
@@ -154,7 +154,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 py-6 mt-12 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="max-w-screen-2xl mx-auto px-4 text-center text-sm sm:text-base text-slate-500 dark:text-slate-400">
             <p id="displayFooterText">© 2026 Panitia Pemilihan Kepala Desa Sukamaju. Seluruh hak cipta dilindungi.</p>
         </div>
     </footer>
@@ -172,7 +172,7 @@
 
     <!-- MODAL MATRIKS PEMBANDING -->
     <div id="compareModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-700 transition-colors p-6 sm:p-8 relative">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-screen-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-700 transition-colors p-6 sm:p-8 relative">
             <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200 dark:border-slate-700">
                 <div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white">Matriks Pembanding Program Kerja</h3>
@@ -542,11 +542,11 @@
 
             if (timerDisplayEl) {
                 if (totalSeconds <= 60 && totalSeconds > 0) {
-                    timerDisplayEl.className = "text-3xl font-extrabold font-mono text-red-500 animate-pulse leading-none";
+                    timerDisplayEl.className = "text-5xl font-extrabold font-mono text-red-500 animate-pulse leading-none";
                 } else if (totalSeconds === 0) {
-                    timerDisplayEl.className = "text-3xl font-extrabold font-mono text-red-600 leading-none";
+                    timerDisplayEl.className = "text-5xl font-extrabold font-mono text-red-600 leading-none";
                 } else {
-                    timerDisplayEl.className = "text-3xl font-extrabold font-mono text-slate-900 dark:text-white leading-none";
+                    timerDisplayEl.className = "text-5xl font-extrabold font-mono text-slate-900 dark:text-white leading-none";
                 }
             }
         }
@@ -562,9 +562,9 @@
                 if (alertBanner) alertBanner.classList.add('hidden');
 
                 isRunning = true;
-                if(icon) icon.className = "fa-solid fa-pause text-xs";
+                if(icon) icon.className = "fa-solid fa-pause text-base";
                 if(text) text.textContent = "Jeda";
-                if(toggleBtn) toggleBtn.className = "px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-xl shadow transition flex items-center gap-1.5";
+                if(toggleBtn) toggleBtn.className = "px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
 
                 timerInterval = setInterval(() => {
                     if (totalSeconds > 0) {
@@ -573,9 +573,9 @@
                     } else {
                         clearInterval(timerInterval);
                         isRunning = false;
-                        if(icon) icon.className = "fa-solid fa-play text-xs";
+                        if(icon) icon.className = "fa-solid fa-play text-base";
                         if(text) text.textContent = "Selesai";
-                        if(toggleBtn) toggleBtn.className = "px-4 py-2 bg-slate-400 text-white font-semibold text-sm rounded-xl cursor-not-allowed flex items-center gap-1.5";
+                        if(toggleBtn) toggleBtn.className = "px-6 py-3 bg-slate-400 text-white font-semibold text-lg rounded-xl cursor-not-allowed flex items-center gap-1.5";
                         if (alertBanner) alertBanner.classList.remove('hidden');
                         playAlertSound();
                     }
@@ -583,9 +583,9 @@
             } else {
                 clearInterval(timerInterval);
                 isRunning = false;
-                if(icon) icon.className = "fa-solid fa-play text-xs";
+                if(icon) icon.className = "fa-solid fa-play text-base";
                 if(text) text.textContent = "Lanjut";
-                if(toggleBtn) toggleBtn.className = "px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow transition flex items-center gap-1.5";
+                if(toggleBtn) toggleBtn.className = "px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
             }
         }
 
@@ -601,9 +601,9 @@
             const alertBanner = document.getElementById('timerAlertBanner');
 
             if (alertBanner) alertBanner.classList.add('hidden');
-            if(icon) icon.className = "fa-solid fa-play text-xs";
+            if(icon) icon.className = "fa-solid fa-play text-base";
             if(text) text.textContent = "Mulai";
-            if(toggleBtn) toggleBtn.className = "px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow transition flex items-center gap-1.5";
+            if(toggleBtn) toggleBtn.className = "px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
 
             updateTimerDisplay();
         }
@@ -614,14 +614,14 @@
             if(!container) return;
 
             let html = `
-                <button onclick="filterCandidate('all')" id="btn-all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 text-white shadow-sm transition whitespace-nowrap">
+                <button onclick="filterCandidate('all')" id="btn-all" class="filter-btn active px-5 py-3 rounded-xl text-base sm:text-lg font-semibold bg-emerald-600 text-white shadow-sm transition whitespace-nowrap">
                     Semua Calon
                 </button>
             `;
 
             candidates.forEach(c => {
                 html += `
-                    <button onclick="filterCandidate('${c.no}')" id="btn-${c.no}" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition whitespace-nowrap">
+                    <button onclick="filterCandidate('${c.no}')" id="btn-${c.no}" class="filter-btn px-5 py-3 rounded-xl text-base sm:text-lg font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition whitespace-nowrap">
                         Calon No. ${c.no}
                     </button>
                 `;
@@ -651,27 +651,27 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
                             
                             <div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-2xl shadow-lg border border-white/20 flex items-center gap-2">
-                                <span class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">Calon No</span>
-                                <span class="text-xl font-black text-emerald-600 dark:text-emerald-400 font-mono">${c.no}</span>
+                                <span class="text-sm uppercase font-bold text-slate-500 dark:text-slate-400">Calon No</span>
+                                <span class="text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">${c.no}</span>
                             </div>
 
                             <div class="absolute bottom-4 left-4 right-4 text-white">
-                                <h3 class="text-lg font-bold leading-snug drop-shadow-sm">${c.name}</h3>
+                                <h3 class="text-2xl sm:text-3xl font-bold leading-snug drop-shadow-sm">${c.name}</h3>
                             </div>
                         </div>
 
                         <div class="p-6 space-y-5">
                             <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Visi Ringkas</span>
-                                <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">${c.visi}</p>
+                                <span class="text-sm font-bold text-slate-400 uppercase tracking-wider block mb-1">Visi Ringkas</span>
+                                <p class="text-lg xl:text-xl text-slate-600 dark:text-slate-300 line-clamp-4 leading-relaxed">${c.visi}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-6 pt-0">
-                        <button onclick="openDetailModal('${c.no}')" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold text-xs shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transition flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                        <button onclick="openDetailModal('${c.no}')" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold text-lg shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transition flex items-center justify-center gap-2 group-hover:scale-[1.02]">
                             <span>Lihat Detail Visi & Misi</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                            <i class="fa-solid fa-arrow-right text-base"></i>
                         </button>
                     </div>
                 `;
@@ -682,12 +682,12 @@
 
         function filterCandidate(num) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.className = "filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition whitespace-nowrap";
+                btn.className = "filter-btn px-5 py-3 rounded-xl text-base sm:text-lg font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition whitespace-nowrap";
             });
 
             const activeBtn = document.getElementById(`btn-${num}`);
             if(activeBtn) {
-                activeBtn.className = "filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 text-white shadow-sm transition whitespace-nowrap";
+                activeBtn.className = "filter-btn active px-5 py-3 rounded-xl text-base sm:text-lg font-semibold bg-emerald-600 text-white shadow-sm transition whitespace-nowrap";
             }
 
             renderCandidates(num);
@@ -709,11 +709,11 @@
             timerDisplayEl.textContent = display;
 
             if (modalTotalSeconds <= 60 && modalTotalSeconds > 0) {
-                timerDisplayEl.className = "text-xl font-extrabold font-mono text-red-500 animate-pulse leading-none";
+                timerDisplayEl.className = "text-4xl sm:text-5xl font-extrabold font-mono text-red-500 animate-pulse leading-none";
             } else if (modalTotalSeconds === 0) {
-                timerDisplayEl.className = "text-xl font-extrabold font-mono text-red-600 leading-none";
+                timerDisplayEl.className = "text-4xl sm:text-5xl font-extrabold font-mono text-red-600 leading-none";
             } else {
-                timerDisplayEl.className = "text-xl font-extrabold font-mono text-slate-900 dark:text-white leading-none";
+                timerDisplayEl.className = "text-4xl sm:text-5xl font-extrabold font-mono text-slate-900 dark:text-white leading-none";
             }
         }
 
@@ -728,9 +728,9 @@
                 if (alertBanner) alertBanner.classList.add('hidden');
 
                 isModalTimerRunning = true;
-                if(icon) icon.className = "fa-solid fa-pause text-xs";
+                if(icon) icon.className = "fa-solid fa-pause text-base";
                 if(text) text.textContent = "Jeda";
-                if(toggleBtn) toggleBtn.className = "px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs rounded-xl shadow transition flex items-center gap-1.5";
+                if(toggleBtn) toggleBtn.className = "px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
 
                 modalTimerInterval = setInterval(() => {
                     if (modalTotalSeconds > 0) {
@@ -739,9 +739,9 @@
                     } else {
                         clearInterval(modalTimerInterval);
                         isModalTimerRunning = false;
-                        if(icon) icon.className = "fa-solid fa-play text-xs";
+                        if(icon) icon.className = "fa-solid fa-play text-base";
                         if(text) text.textContent = "Selesai";
-                        if(toggleBtn) toggleBtn.className = "px-3 py-1.5 bg-slate-400 text-white font-semibold text-xs rounded-xl cursor-not-allowed flex items-center gap-1.5";
+                        if(toggleBtn) toggleBtn.className = "px-5 py-2.5 bg-slate-400 text-white font-semibold text-lg rounded-xl cursor-not-allowed flex items-center gap-1.5";
 
                         if (alertBanner) alertBanner.classList.remove('hidden');
                         playAlertSound();
@@ -750,9 +750,9 @@
             } else {
                 clearInterval(modalTimerInterval);
                 isModalTimerRunning = false;
-                if(icon) icon.className = "fa-solid fa-play text-xs";
+                if(icon) icon.className = "fa-solid fa-play text-base";
                 if(text) text.textContent = "Lanjut";
-                if(toggleBtn) toggleBtn.className = "px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow transition flex items-center gap-1.5";
+                if(toggleBtn) toggleBtn.className = "px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
             }
         }
 
@@ -771,9 +771,9 @@
 
             if (alertBanner) alertBanner.classList.add('hidden');
 
-            if(icon) icon.className = "fa-solid fa-play text-xs";
+            if(icon) icon.className = "fa-solid fa-play text-base";
             if(text) text.textContent = "Mulai";
-            if(toggleBtn) toggleBtn.className = "px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow transition flex items-center gap-1.5";
+            if(toggleBtn) toggleBtn.className = "px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5";
 
             updateModalTimerDisplay();
         }
@@ -784,17 +784,17 @@
 
             const content = document.getElementById('modalContent');
             content.innerHTML = `
-                <div class="max-w-6xl mx-auto">
+                <div class="max-w-screen-2xl mx-auto">
                     <div class="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 pt-6 sm:pt-8 px-6 sm:px-8 pb-4 mb-6 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-700/80 z-10">
                         <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex flex-col gap-2 shadow-sm">
                             <div class="flex flex-wrap items-center justify-between gap-3">
                                 <div class="flex items-center gap-2.5">
-                                    <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
-                                        <i class="fa-solid fa-stopwatch text-sm"></i>
+                                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-stopwatch text-xl"></i>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Timer Pemaparan Calon No. ${c.no}</span>
-                                        <div id="modalTimerDisplay" class="text-xl font-extrabold font-mono text-slate-900 dark:text-white leading-none">
+                                        <span class="text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Timer Pemaparan Calon No. ${c.no}</span>
+                                        <div id="modalTimerDisplay" class="text-4xl sm:text-5xl font-extrabold font-mono text-slate-900 dark:text-white leading-none">
                                             10:00
                                         </div>
                                     </div>
@@ -802,22 +802,22 @@
 
                                 <div class="flex items-center gap-2 pr-8 sm:pr-10">
                                     <div class="flex items-center bg-white dark:bg-slate-700 rounded-lg px-2 py-1 border border-slate-200 dark:border-slate-600">
-                                        <input id="modalTimerInput" type="number" min="1" max="60" value="10" onchange="resetModalTimer()" class="w-10 bg-transparent text-center font-bold text-slate-800 dark:text-slate-100 text-xs focus:outline-none">
-                                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium pr-0.5">m.</span>
+                                        <input id="modalTimerInput" type="number" min="1" max="60" value="10" onchange="resetModalTimer()" class="w-16 bg-transparent text-center font-bold text-slate-800 dark:text-slate-100 text-xl focus:outline-none">
+                                        <span class="text-base text-slate-500 dark:text-slate-400 font-medium pr-0.5">m.</span>
                                     </div>
 
-                                    <button id="modalTimerToggleBtn" onclick="toggleModalTimer()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow transition flex items-center gap-1.5">
-                                        <i id="modalTimerIcon" class="fa-solid fa-play text-xs"></i>
+                                    <button id="modalTimerToggleBtn" onclick="toggleModalTimer()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg rounded-xl shadow transition flex items-center gap-1.5">
+                                        <i id="modalTimerIcon" class="fa-solid fa-play text-base"></i>
                                         <span id="modalTimerText">Mulai</span>
                                     </button>
 
                                     <button onclick="resetModalTimer()" class="p-1.5 bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 rounded-xl border border-slate-200 dark:border-slate-600 transition" title="Reset Timer">
-                                        <i class="fa-solid fa-rotate-left text-xs"></i>
+                                        <i class="fa-solid fa-rotate-left text-lg"></i>
                                     </button>
                                 </div>
                             </div>
 
-                            <div id="modalTimerAlertBanner" class="hidden p-2 bg-red-600 text-white text-xs font-bold rounded-lg text-center animate-bounce flex items-center justify-center gap-2">
+                            <div id="modalTimerAlertBanner" class="hidden p-2 bg-red-600 text-white text-lg font-bold rounded-lg text-center animate-bounce flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                 <span>Waktu sudah habis!</span>
                             </div>
@@ -825,35 +825,35 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center gap-6 mb-8 border-b border-slate-200 dark:border-slate-700 pb-6">
-                        <div class="w-28 h-36 rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden shrink-0 shadow-md border-2 border-emerald-500/20">
+                        <div class="w-40 h-52 sm:w-48 sm:h-64 rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden shrink-0 shadow-md border-2 border-emerald-500/20">
                             <img src="${c.photo || ''}" alt="${c.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x400/e2e8f0/475569?text=Calon+${c.no}'">
                         </div>
                         <div class="text-center sm:text-left">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 mb-2 border border-emerald-200 dark:border-emerald-800">
+                            <span class="inline-block px-4 py-1.5 rounded-full text-base sm:text-lg font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 mb-2 border border-emerald-200 dark:border-emerald-800">
                                 CALON KEPALA DESA NO. ${c.no}
                             </span>
-                            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">${c.name}</h2>
+                            <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-1">${c.name}</h2>
                         </div>
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-eye text-sm"></i> VISI UTAMA
+                        <h4 class="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-eye text-xl"></i> VISI UTAMA
                         </h4>
-                        <div class="p-4 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-slate-800 dark:text-slate-100 font-semibold text-sm leading-relaxed">
+                        <div class="p-6 sm:p-8 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-slate-800 dark:text-slate-100 font-semibold text-2xl sm:text-3xl leading-relaxed">
                             "${c.visi}"
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="mb-8">
-                        <h4 class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-list-check text-sm"></i> MISI PEMBANGUNAN
+                        <h4 class="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-xl"></i> MISI PEMBANGUNAN
                         </h4>
                         <ul class="space-y-3">
                             ${(c.misi || []).map((m, idx) => `
-                                <li class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
-                                    <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
+                                <li class="flex items-start gap-5 p-3 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 text-xl sm:text-2xl text-slate-700 dark:text-slate-200">
+                                    <span class="w-10 h-10 rounded-lg bg-emerald-600 text-white font-bold text-lg flex items-center justify-center shrink-0">${idx + 1}</span>
                                     <span class="mt-0.5">${m}</span>
                                 </li>
                             `).join('')}
@@ -861,16 +861,16 @@
                     </div>
 
                     <div>
-                        <h4 class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-gears text-sm"></i> PROGRAM KERJA UNGGULAN
+                        <h4 class="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-gears text-xl"></i> PROGRAM KERJA UNGGULAN
                         </h4>
                         <div class="grid grid-cols-1 gap-3">
                             ${(c.program || []).map((p, idx) => `
-                                <div class="p-3.5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                <div class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-lg shrink-0">
                                         P${idx + 1}
                                     </div>
-                                    <span class="text-xs font-medium text-slate-800 dark:text-slate-200">${p}</span>
+                                    <span class="text-xl sm:text-2xl font-medium text-slate-800 dark:text-slate-200">${p}</span>
                                 </div>
                             `).join('')}
                         </div>
@@ -899,16 +899,16 @@
                 <table class="w-full border-collapse">
                     <thead>
                         <tr>
-                            <th class="p-4 bg-slate-100 dark:bg-slate-700/50 text-left text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700 w-1/4">Indikator</th>
+                            <th class="p-4 bg-slate-100 dark:bg-slate-700/50 text-left text-base font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700 w-1/4">Indikator</th>
                             ${candidates.map(c => `
                                 <th class="p-4 bg-slate-50 dark:bg-slate-800 text-center border-b border-slate-200 dark:border-slate-700 w-1/4">
                                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 block">CALON NO. ${c.no}</span>
-                                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">${c.name}</h4>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">${c.name}</h4>
                                 </th>
                             `).join('')}
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-xs">
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-lg">
                         <tr>
                             <td class="p-4 font-bold text-slate-800 dark:text-slate-200 bg-slate-50/50 dark:bg-slate-800/30 align-top">Visi Utama</td>
                             ${candidates.map(c => `
